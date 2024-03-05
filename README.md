@@ -2,7 +2,7 @@
 This repository contains the curriculum and project details for the Software Engineering Foundations course. The primary focus is on building an AirBnB clone in Python, introducing fundamental concepts and skills essential for web application development.
 
 <h1> Project Overview </h1>
-<h2> AirBnB Clone - The Console <h2>
+<h2> AirBnB Clone - The Console </h2>
 Weight: 5
 By: Guillaume
 Start Date: Mar 4, 2024 6:00 AM
