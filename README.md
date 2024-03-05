@@ -3,16 +3,16 @@ This repository contains the curriculum and project details for the Software Eng
 
 <h1> Project Overview </h1>
 <h2> AirBnB Clone - The Console </h2>
-Weight: 5
-By: Guillaume
-Start Date: Mar 4, 2024 6:00 AM
-End Date: Mar 11, 2024 6:00 AM
-Checker Release: Mar 9, 2024 12:00 PM
-Team: Joseph Nchimunya, Mucheru Maina
-Concepts Covered
-Python packages
-AirBnB clone
-Object-Oriented Programming (OOP)
+- Weight: 5
+- By: Guillaume
+- Start Date: Mar 4, 2024 6:00 AM
+- End Date: Mar 11, 2024 6:00 AM
+- Checker Release: Mar 9, 2024 12:00 PM
+- Team: Joseph Nchimunya, Mucheru Maina
+- Concepts Covered
+- Python packages
+- AirBnB clone
+- Object-Oriented Programming (OOP)
 
 <h2> Background Context </h2>
 Welcome to the AirBnB clone project! Before diving in, please read the AirBnB concept page. This project's first step involves creating a command interpreter to manage AirBnB objects, setting the foundation for subsequent tasks like HTML/CSS templating, database storage, and API integration.
