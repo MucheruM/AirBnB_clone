@@ -52,6 +52,7 @@ All tests should be executed by using python3 -m unittest discover tests
 Execution
 
 Your shell should work both in interactive and non-interactive modes. Example:
+
 Interactive mode:
 
 ```bash
