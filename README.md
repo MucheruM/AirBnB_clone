@@ -3,6 +3,7 @@ This repository contains the curriculum and project details for the Software Eng
 
 <h1> Project Overview </h1>
 <h2> AirBnB Clone - The Console </h2>
+
 - Weight: 5
 - By: Guillaume
 - Start Date: Mar 4, 2024 6:00 AM
@@ -49,7 +50,9 @@ Test files must start with "test_"
 Test file organization should mirror the project structure
 All tests should be executed by using python3 -m unittest discover tests
 Execution
+
 Your shell should work both in interactive and non-interactive modes. Example:
+Interactive mode:
 
 ```bash
 Copy code
