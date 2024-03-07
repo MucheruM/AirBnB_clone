@@ -7,20 +7,31 @@ from datetime import datetime
 class BaseModel:
     """A class that defines all common attributes for methods"""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """The initial set of instruction
 
         This means that all instances created from this class,
         will have all the attributes and values describes here
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.utcnow()
-        self.updated_at = datetime.utcnow()
+        if kwargs:
+			# self.__dict__ = kwargs
+			# self.created_at = datetime.strptime(self.created_at, "
+			#										%Y-%m-%dT%H:%M:%S.%f")
+			# self.updated_at = datetime.strptime(self.updated_at, "
+			# 										%Y-%m-%dT%H:%M:%S.%f")
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                if key != "__class__":
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.utcnow()
+            self.updated_at = datetime.utcnow()
 
     def __str__(self):
         """
         Returns a human-readable/informal, str repr of an obj
-
         Returns:
             dict: The object attributes such as id and time of 
                   BaseModel and their values
