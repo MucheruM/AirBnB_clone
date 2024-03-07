@@ -1,0 +1,32 @@
+models/base_model.py:16:1: E101 indentation contains mixed spaces and tabs
+models/base_model.py:16:1: W191 indentation contains tabs
+models/base_model.py:16:3: E113 unexpected indentation
+models/base_model.py:17:1: W191 indentation contains tabs
+models/base_model.py:18:1: E101 indentation contains mixed spaces and tabs
+models/base_model.py:18:13: E115 expected an indented block (comment)
+models/base_model.py:18:80: E501 line too long (90 > 79 characters)
+models/base_model.py:19:13: E115 expected an indented block (comment)
+models/base_model.py:19:80: E501 line too long (90 > 79 characters)
+models/base_model.py:20:1: E101 indentation contains mixed spaces and tabs
+models/base_model.py:20:1: W191 indentation contains tabs
+models/base_model.py:21:1: W191 indentation contains tabs
+models/base_model.py:22:1: W191 indentation contains tabs
+models/base_model.py:22:40: E225 missing whitespace around operator
+models/base_model.py:22:48: E228 missing whitespace around modulo operator
+models/base_model.py:22:50: E231 missing whitespace after ':'
+models/base_model.py:22:51: E228 missing whitespace around modulo operator
+models/base_model.py:22:53: E231 missing whitespace after ':'
+models/base_model.py:22:54: E228 missing whitespace around modulo operator
+models/base_model.py:22:57: E228 missing whitespace around modulo operator
+models/base_model.py:23:1: W191 indentation contains tabs
+models/base_model.py:24:1: W191 indentation contains tabs
+models/base_model.py:25:1: W191 indentation contains tabs
+models/base_model.py:26:1: E101 indentation contains mixed spaces and tabs
+models/base_model.py:26:9: W191 indentation contains tabs
+models/base_model.py:26:10: E112 expected an indented block
+models/base_model.py:27:9: E101 indentation contains mixed spaces and tabs
+models/base_model.py:27:9: W191 indentation contains tabs
+models/base_model.py:28:9: E101 indentation contains mixed spaces and tabs
+models/base_model.py:28:9: W191 indentation contains tabs
+models/base_model.py:35:63: W291 trailing whitespace
+models/base_model.py:41:77: W291 trailing whitespace
