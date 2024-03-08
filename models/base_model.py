@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" BaseModel of the Program"""
 
 import uuid
 from datetime import datetime
@@ -13,7 +14,6 @@ class BaseModel:
         This means that all instances created from this class,
         will have all the attributes and values describes here
         """
-
         if kwargs:
             # Iterate through key-value pairs in kwargs
             for key, value in kwargs.items():
