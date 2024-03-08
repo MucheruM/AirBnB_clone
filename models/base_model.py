@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" BaseModel of the Program"""
 
 import uuid
 from datetime import datetime
