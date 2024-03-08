@@ -14,37 +14,40 @@ class BaseModel:
         will have all the attributes and values describes here
         """
 
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.utcnow()
-        self.updated_at = self.created_at
-
         if kwargs:
-	# self.__dict__ = kwargs
-	# self.created_at = datetime.strptime(self.created_at, "
-	# %Y-%m-%dT%H:%M:%S.%f")
-	# self.updated_at = datetime.strptime(self.updated_at, "
-	# %Y-%m-%dT%H:%M:%S.%f")
+            # Iterate through key-value pairs in kwargs
             for key, value in kwargs.items():
+                # Convert 'created_at' and 'updated_at' values to datetime objs
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+
+                """Set instance attr with the given key to the new value
+
+                checks if key is != to "__class__" string
+
+                setattr:
+                    Uses setattr to set attribute on the self object,
+                    with the appropriate key and value
+                """
                 if key != "__class__":
                     setattr(self, key, value)
+
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.utcnow()
-            self.updated_at = datetime.utcnow()
+            self.updated_at = self.created_at
 
     def __str__(self):
         """
         Returns a human-readable/informal, str repr of an obj
         Returns:
-            dict: The object attributes such as id and time of 
+            dict: The object attributes such as id and time of
                   BaseModel and their values
         """
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
-        """Update the update at time attribute with the current tumestamp"""   
+        """Update the update at time attribute with the current tumestamp"""
         self.updated_at = datetime.utcnow()
 
     def to_dict(self):
