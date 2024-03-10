@@ -6,13 +6,21 @@ import shlex
 import models
 import sys
 from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     """HBNB Command Terminal Class"""
 
     prompt = "(hbnb) "
-    classes = {'BaseModel': BaseModel}
+    classes = {'BaseModel': BaseModel, 'Amenity': Amenity,
+               'State': State, 'Place': Place, 'Review': Review,
+               'User': User, 'City': City}
 
     def do_quit(self, argument):
         """Defines quit option"""

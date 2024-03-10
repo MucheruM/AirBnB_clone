@@ -3,6 +3,12 @@
 import json
 
 from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 
 
 class FileStorage:
@@ -74,8 +80,8 @@ class FileStorage:
                 diser_obj_dict = json.load(json_file)
 
             for key, obj_inst in diser_obj_dict.items():
-                class_name = obj_inst['__class__']
+                class_name = eval(obj_inst['__class__'])(**obj_inst)
 
-                self.__objects[key] = self.__class_map[class_name](**obj_inst)
+                self.__objects[key] = class_name
         except FileNotFoundError:
             pass
