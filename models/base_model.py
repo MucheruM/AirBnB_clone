@@ -3,6 +3,7 @@
 
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -36,6 +37,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.utcnow()
             self.updated_at = self.created_at
+            models.storage.new(self)
 
     def __str__(self):
         """
@@ -49,6 +51,7 @@ class BaseModel:
     def save(self):
         """Update the update at time attribute with the current tumestamp"""
         self.updated_at = datetime.utcnow()
+        models.storage.save()
 
     def to_dict(self):
         """Create a copy of the object dictionary protecting original values"""
