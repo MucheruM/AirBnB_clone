@@ -4,6 +4,7 @@ import json
 
 from models.base_model import BaseModel
 
+
 class FileStorage:
     """
     Manages the storage of objects in a dictionary and
@@ -13,10 +14,15 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
-    __classes_mapping = {
+    """
+    This code maps class names to their corresponding class obj
+    Its a dictionary that holds mapping betwen class names and their associated
+    class objects, facilitating dynamic instantiation based on class names.
+    """
+    __class_map = {
         'BaseModel': BaseModel,
         }
-    
+
     def all(self):
         """
         Retrieve all objects stored in the dictionary.
@@ -41,7 +47,7 @@ class FileStorage:
 
     def save(self):
         """
-        Save the serialized objects(ser_obj_dict) to a JSON file.
+        Save the serialized objects dict (ser_obj_dict) to a JSON file.
         """
         ser_obj_dict = {}
 
@@ -53,13 +59,23 @@ class FileStorage:
             json_file.write(json.dumps(ser_obj_dict))
 
     def reload(self):
+        """
+        Reloads objects from a JSON file, updating the class state
+
+        Attempts to read serialized objests from the specified JSON file.
+        If successful, dynamically creates new instances based on stored data.
+
+        If the file is not found, no action is taken.
+
+        NB: Uses the '__class__' attribute for dynamic class instantiation.
+        """
         try:
             with open(self.__file_path, "r", encoding="utf-8") as json_file:
                 diser_obj_dict = json.load(json_file)
 
-            for key, obj_instance2 in diser_obj_dict.items():
-                class_name = obj_instance2['__class__']
+            for key, obj_inst in diser_obj_dict.items():
+                class_name = obj_inst['__class__']
 
-                self.__objects[key] = self.__class_mapping_classes[class_name](**obj_instance2)
+                self.__objects[key] = self.__class_map[class_name](**obj_inst)
         except FileNotFoundError:
             pass
