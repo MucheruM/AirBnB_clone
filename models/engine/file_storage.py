@@ -26,7 +26,8 @@ class FileStorage:
     class objects, facilitating dynamic instantiation based on class names.
     """
     __class_map = {
-        'BaseModel': BaseModel,
+        'BaseModel': BaseModel,'Amenity': Amenity, 'State': State,
+           'Place': Place, 'Review': Review, 'User': User
         }
 
     def all(self):
@@ -62,7 +63,7 @@ class FileStorage:
 
         # Save the serialized objects dictionary to a JSON file
         with open(self.__file_path, "w", encoding="utf-8") as json_file:
-            json_file.write(json.dumps(ser_obj_dict))
+            json.dump(ser_obj_dict, json_file)
 
     def reload(self):
         """
