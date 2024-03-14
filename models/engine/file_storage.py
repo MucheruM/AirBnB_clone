@@ -26,8 +26,8 @@ class FileStorage:
     class objects, facilitating dynamic instantiation based on class names.
     """
     __class_map = {
-        'BaseModel': BaseModel,'Amenity': Amenity, 'State': State,
-           'Place': Place, 'Review': Review, 'User': User
+        'BaseModel': BaseModel, 'Amenity': Amenity, 'State': State,
+        'Place': Place, 'Review': Review, 'User': User,
         }
 
     def all(self):
