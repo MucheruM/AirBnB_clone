@@ -5,14 +5,8 @@ footer {
     bottom: 0;
     position: fixed;
     border-top: 1px solid #CCCCCC;
-}
-
-footer p {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
